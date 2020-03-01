@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const App = () => {
+class App extends Component {
 	
-	return (
-		<div data-test="component-app">
-			<h1 data-test="counter-display">The counter is currently: </h1>
-			<button data-test="increment-button">Increment counter</button>
-		</div>
-	);
-};
+	constructor(props) {
+		super(props);
+		this.state = {
+			counter: 0
+		};
+	}
+
+	render() {
+		return (
+			<div data-test="component-app">
+				<h1 data-test="counter-display">The counter is currently: {this.state.counter} </h1>
+				<button 
+					data-test="increment-button"
+					onClick={() => this.setState((prevState) => ({ counter: prevState.counter + 1 }))}>
+					Increment counter</button>
+			</div>
+		);
+	}
+}
 
 export default App;
