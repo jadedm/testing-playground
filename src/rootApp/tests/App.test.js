@@ -14,8 +14,10 @@ test('should render without any errors', () => {
 
 });
 
+/*
 test('should render without any errors', () => {
 	const div = document.createElement('div');
 	render(<App />, div);
 	unmountComponentAtNode(div);
 });
+*/
